@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chronicles of Kerala - Discover God's Own Country</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #e8f5e8 0%, #d4f1d4 100%);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header Section */
+      header {
+        background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #ff6b35, #f7931e);
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(45deg, #fff, #e8f5e8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        font-style: italic;
+      }
+
+      /* Description Section */
+      .description {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 4rem 0;
+        text-align: center;
+        margin: 2rem 0;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .description h2 {
+        font-size: 2.5rem;
+        color: #2d5016;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .description h2::after {
+        content: "";
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(45deg, #ff6b35, #f7931e);
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .description p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #555;
+      }
+
+      /* Itineraries Section */
+      .itineraries {
+        padding: 4rem 0;
+      }
+
+      .itineraries h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #2d5016;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .itineraries h2::after {
+        content: "";
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(45deg, #ff6b35, #f7931e);
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+      }
+
+      .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-image {
+        width: 100%;
+        height: 250px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card-image::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          45deg,
+          rgba(45, 80, 22, 0.7),
+          rgba(74, 124, 89, 0.5)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .card:hover .card-image::before {
+        opacity: 1;
+      }
+
+      .card1 {
+        background-image: url("https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=400&h=250&fit=crop");
+      }
+      .card2 {
+        background-image: url("https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&h=250&fit=crop");
+      }
+      .card3 {
+        background-image: url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=250&fit=crop");
+      }
+
+      .card-content {
+        padding: 2rem;
+      }
+
+      .card h3 {
+        font-size: 1.5rem;
+        color: #2d5016;
+        margin-bottom: 1rem;
+        font-weight: bold;
+      }
+
+      .card p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .card-price {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #ff6b35;
+        margin-bottom: 1rem;
+      }
+
+      .card-btn {
+        background: linear-gradient(45deg, #ff6b35, #f7931e);
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .card-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+      }
+
+      /* Footer */
+      footer {
+        background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+        color: white;
+        padding: 3rem 0 2rem;
+        text-align: center;
+        margin-top: 4rem;
+      }
+
+      .footer-content h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #fff;
+      }
+
+      .contact-info {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: white;
+      }
+
+      .contact-item:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .social-icon {
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .facebook {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>');
+      }
+
+      .instagram {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>');
+      }
+
+      .gmail {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>');
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        margin-top: 2rem;
+        padding-top: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+
+        .description h2,
+        .itineraries h2 {
+          font-size: 2rem;
+        }
+
+        .cards-container {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-info {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      /* Scroll animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .card {
+        animation: fadeInUp 0.6s ease forwards;
+      }
+
+      .card:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .card:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="container">
+        <div class="logo">
+          <img
+            style="width: 120px; border-radius: 50%"
+            src="./assets/logo.png"
+          />
+        </div>
+        <h1>Chronicles of Kerala</h1>
+        <p class="tagline">
+          Discover the Enchanting Beauty of God's Own Country
+        </p>
+      </div>
+    </header>
+
+    <!-- Description Section -->
+    <div class="container">
+      <section class="description">
+        <h2>About Our Journey</h2>
+        <p>
+          Welcome to Chronicles of Kerala, your gateway to experiencing the
+          magical landscapes, rich culture, and warm hospitality of Kerala. From
+          the serene backwaters of Alleppey to the misty hills of Munnar, we
+          craft unforgettable journeys that showcase the very best of God's Own
+          Country. Our expertly curated tours blend adventure, relaxation, and
+          cultural immersion, ensuring every traveler discovers their own unique
+          story in Kerala's breathtaking beauty.
+        </p>
+      </section>
+
+      <!-- Itineraries Section -->
+      <section class="itineraries">
+        <h2>Featured Itineraries</h2>
+        <div class="cards-container">
+          <div class="card">
+            <div class="card-image card1"></div>
+            <div class="card-content">
+              <h3>Backwater Bliss</h3>
+              <p>
+                Experience the tranquil beauty of Kerala's famous backwaters
+                with a luxury houseboat stay in Alleppey. Cruise through
+                palm-fringed canals, witness rural life, and enjoy traditional
+                Kerala cuisine while floating on these pristine waters.
+              </p>
+              <div class="card-price">Starting from ₹12,999</div>
+              <button class="card-btn">Explore Journey</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image card2"></div>
+            <div class="card-content">
+              <h3>Hill Station Haven</h3>
+              <p>
+                Escape to the cool mountain air of Munnar and Wayanad. Walk
+                through endless tea plantations, spot exotic wildlife, and
+                breathe in the fresh mountain air while staying in cozy hill
+                station resorts.
+              </p>
+              <div class="card-price">Starting from ₹15,499</div>
+              <button class="card-btn">Explore Journey</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image card3"></div>
+            <div class="card-content">
+              <h3>Cultural Kerala</h3>
+              <p>
+                Immerse yourself in Kerala's rich heritage with visits to
+                ancient temples, traditional Kathakali performances, spice
+                plantations, and local markets. Experience authentic Kerala
+                through its arts, crafts, and culinary traditions.
+              </p>
+              <div class="card-price">Starting from ₹11,799</div>
+              <button class="card-btn">Explore Journey</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <h3>Get In Touch</h3>
+          <p>Ready to embark on your Kerala adventure? Connect with us!</p>
+
+          <div class="contact-info">
+            <a
+              href="https://facebook.com/chroniclesofkerala"
+              class="contact-item"
+              target="_blank"
+            >
+              <div class="social-icon facebook"></div>
+              <span>Facebook</span>
+            </a>
+            <a
+              href="https://instagram.com/chroniclesofkerala"
+              class="contact-item"
+              target="_blank"
+            >
+              <div class="social-icon instagram"></div>
+              <span>Instagram</span>
+            </a>
+            <a href="mailto:info@chroniclesofkerala.com" class="contact-item">
+              <div class="social-icon gmail"></div>
+              <span>Email Us</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Chronicles of Kerala. All rights reserved. | Crafting
+            memories, one journey at a time.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
