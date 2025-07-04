@@ -121,7 +121,7 @@ h1 {
 
 /* Itineraries Section */
 .itineraries {
-  padding: 4rem 0;
+  padding: 0;
 }
 
 .itineraries h2 {
@@ -346,6 +346,10 @@ footer {
   .contact-info {
     flex-direction: column;
     align-items: center;
+  }
+
+  .itineraries h2 {
+    font-size: 30px !important;
   }
 }
 
