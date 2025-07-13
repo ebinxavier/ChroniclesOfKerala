@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- // Load the Google APIs client library from CDN -->
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="./scripts/index.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>Essence of Kerala - Chronicles of Kerala</title>
+  </head>
+  <body>
+    <div>
+      <div class="logo">
+        <img style="width: 120px; border-radius: 50%" src="./assets/logo.png" />
+      </div>
+    </div>
+    <h2 style="text-align: center; font-size: 30px">Essence of Kerala</h2>
+    <div>
+      <div class="slider slider-container">
+        <div>
+          <img src="./assets/images/backwaters.jpg" alt="Backwaters" />
+        </div>
+        <div>
+          <img src="./assets/images/couples.jpg" alt="Couples" />
+        </div>
+        <div>
+          <img src="./assets/images/girl.jpg" alt="Girl" />
+        </div>
+        <div>
+          <img src="./assets/images/kerala-culture.jpg" alt="Girl" />
+        </div>
+        <div>
+          <img src="./assets/images/munnar.jpg" alt="Girl" />
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .slider-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 16px;
+        height: 250px;
+      }
+      .slider img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        display: block;
+      }
+      @media (max-width: 600px) {
+        .slider-container {
+          max-width: 100%;
+          margin: 16px auto;
+          padding: 0 4px;
+          height: 250px;
+        }
+        .slider img {
+          height: 250px;
+        }
+      }
+    </style>
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".slider").slick({
+          cssEase: "linear",
+          centerMode: true,
+          centerPadding: "0px",
+          slidesToShow: 3,
+          arrows: false,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 2,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                centerPadding: "0px",
+              },
+            },
+          ],
+          autoplay: true,
+          autoplaySpeed: 2000,
+        });
+      });
+    </script>
+    <!-- Package Details Section -->
+    <div class="container">
+      <section class="description">
+        <!-- <h2>Essence of Kerala</h2> -->
+        <p style="font-size: 1.15rem; color: #35512c; line-height: 1.7">
+          Discover Kerala through the eyes of those who call it home. Carefully
+          crafted by locals, this journey is ideal for families, couples, and
+          curious explorers of all ages. Stay in handpicked beach resorts, cozy
+          homestays, misty hill stations, and even a private island. Drift
+          through the backwaters on a traditional houseboat, try your hand at
+          Chinese net fishing, and share laughter in village lanes. Dive into
+          Kerala’s culture with Kathakali performances, local art, and vibrant
+          festivals. Chase waterfalls, sip fresh toddy, and savor an authentic
+          Kerala sadhya on a banana leaf. This is not just a trip — it’s a
+          living story of nature, people, flavors, and traditions. Come
+          experience the real Kerala — soulful, scenic, and unforgettable. This
+          is the true <strong>Essence of Kerala</strong>.
+        </p>
+        <p
+          style="
+            text-align: left;
+            color: #35512c;
+            margin-top: 2em;
+            font-weight: bold;
+          "
+        >
+          Ideal for
+        </p>
+        <div class="expandable-list" style="margin: 0 25px; text-align: left">
+          <button
+            id="expand-ideal-for"
+            style="
+              background: none;
+              border: none;
+              color: #35512c;
+              font-size: 1.08rem;
+              font-weight: bold;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              padding: 0;
+              margin-bottom: 0.5em;
+            "
+            aria-expanded="false"
+            aria-controls="ideal-for-list"
+          >
+            <span id="expand-icon" style="font-size: 1.2em; margin-right: 0.5em"
+              >&#9654;</span
+            >
+            Show Ideal for
+          </button>
+          <ul
+            id="ideal-for-list"
+            class="ideal-for-list"
+            style="
+              list-style: none;
+              padding: 0;
+              margin: 0;
+              color: #35512c;
+              font-size: 1.08rem;
+              display: none;
+              grid-template-columns: 1fr 1fr;
+            "
+          >
+            <li>
+              <span style="font-size: 1.2em; margin-right: 0.5em">👨‍👩‍👧‍👦</span>
+              Family nature bonding
+            </li>
+            <li>
+              <span style="font-size: 1.2em; margin-right: 0.5em">💑</span>
+              Romantic couple escapes
+            </li>
+            <li>
+              <span style="font-size: 1.2em; margin-right: 0.5em">🧒</span>
+              Kids explore & learn
+            </li>
+            <li>
+              <span style="font-size: 1.2em; margin-right: 0.5em">🌍</span>
+              Authentic travel seekers
+            </li>
+          </ul>
+        </div>
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            var btn = document.getElementById("expand-ideal-for");
+            var ul = document.getElementById("ideal-for-list");
+            var icon = document.getElementById("expand-icon");
+            btn.addEventListener("click", function () {
+              var expanded = btn.getAttribute("aria-expanded") === "true";
+              ul.style.display = expanded ? "none" : "grid";
+              btn.setAttribute("aria-expanded", !expanded);
+              icon.innerHTML = expanded ? "&#9654;" : "&#9660;";
+              btn.querySelector("span + span")
+                ? (btn.querySelector("span + span").textContent = expanded
+                    ? "Show Ideal for"
+                    : "Hide Ideal for")
+                : null;
+            });
+          });
+        </script>
+        <style>
+          @media (max-width: 700px) {
+            .ideal-for-list {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        </style>
+        <p
+          style="
+            text-align: left;
+            color: #35512c;
+            margin-top: 2em;
+            font-weight: bold;
+          "
+        >
+          Activities Included
+        </p>
+
+        <ul
+          class="activities-list"
+          style="
+            list-style: none;
+            padding: 0;
+            margin: 0 25px;
+            text-align: left;
+            color: #35512c;
+            font-size: 1.08rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+          "
+        >
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🌊</span>Hidden
+            waterfall bath
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🏞️</span>Hill
+            station stay
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🚤</span
+            >Backwater houseboat
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🎭</span
+            >Kathakali & Mohiniyattam
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🎣</span>Chinese
+            net fishing
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🛶</span>Canoe
+            village canals
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🐟</span>Local
+            fishing
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🧵</span
+            >Coir-making demo
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🏝️</span>Private
+            island stay
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">💆‍♀️</span
+            >Ayurvedic massage
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🍲</span>Banana
+            leaf lunch
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🌾</span>Village
+            walk
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🛍️</span>Spice
+            market visit
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🪷</span>Temple
+            festival visit
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🕊️</span
+            >Birdwatching trails
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🥋</span>Kalari
+            martial art
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🛶</span>Sunrise
+            kayaking
+          </li>
+          <li>
+            <span style="font-size: 1.2em; margin-right: 0.5em">🎍</span>Bamboo
+            rafting
+          </li>
+        </ul>
+        <style>
+          @media (max-width: 700px) {
+            .activities-list {
+              grid-template-columns: 1fr !important;
+            }
+            .ideal-for-list {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        </style>
+      </section>
+
+      <div class="cards-container second-row">
+        <div class="card">
+          <div class="card-image card1"></div>
+          <div class="card-content">
+            <h3>Wander Women</h3>
+            <p>
+              Laugh, bond, and explore together! From spa days and shopping to
+              adventurous treks and cozy stays, this is the perfect mix of fun
+              and freedom for your girl gang.
+            </p>
+            <a
+              href="https://wa.me/919090702026?text=I%20am%20interested%20in%20the%20Wander%20Women%20package"
+              class="card-btn"
+              target="_blank"
+              aria-label="Enquire on WhatsApp"
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.8em;
+                background: linear-gradient(45deg, #1b823e, #41ab31);
+                text-decoration: none;
+              "
+            >
+              <span
+                class="social-icon whatsapp"
+                style="
+                  width: 24px;
+                  height: 24px;
+                  background-size: 24px 24px;
+                  display: inline-block;
+                "
+              ></span>
+              <span style="padding-left: 8px">WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image card2"></div>
+          <div class="card-content">
+            <h3>Heavenly Honeymoon</h3>
+            <p>
+              A romantic blend of luxury, privacy, and nature. Whether it's
+              beaches, hills, or backwaters — your honeymoon with us promises
+              cherished beginnings and unforgettable moments.
+            </p>
+            <a
+              href="https://wa.me/919090702026?text=I%20am%20interested%20in%20the%20Wander%20Women%20package"
+              class="card-btn"
+              target="_blank"
+              aria-label="Enquire on WhatsApp"
+              style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.8em;
+                background: linear-gradient(45deg, #1b823e, #41ab31);
+                text-decoration: none;
+              "
+            >
+              <span
+                class="social-icon whatsapp"
+                style="
+                  width: 24px;
+                  height: 24px;
+                  background-size: 24px 24px;
+                  display: inline-block;
+                "
+              ></span>
+              <span style="padding-left: 8px">WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <h3>Get In Touch</h3>
+          <p>Ready to embark on your Kerala adventure? Connect with us!</p>
+          <div class="contact-info">
+            <a
+              href="https://www.facebook.com/profile.php?id=61578006745717"
+              class="contact-item"
+              target="_blank"
+            >
+              <div class="social-icon facebook"></div>
+              <span class="contact-label">Facebook</span>
+            </a>
+            <a
+              href="https://instagram.com/chronicles.of.kerala"
+              class="contact-item"
+              target="_blank"
+            >
+              <div class="social-icon instagram"></div>
+              <span class="contact-label">Instagram</span>
+            </a>
+            <a
+              href="mailto:info.chroniclesofkerala@gmail.com"
+              class="contact-item"
+            >
+              <div class="social-icon gmail"></div>
+              <span class="contact-label">Email Us</span>
+            </a>
+            <a
+              href="https://wa.me/919090702026?text=I%20would%20like%20to%20know%20more%20about%20your%20tour%20packages"
+              class="contact-item"
+              target="_blank"
+            >
+              <div class="social-icon whatsapp"></div>
+              <span class="contact-label">WhatsApp</span>
+            </a>
+          </div>
+          <style>
+            @media (max-width: 768px) {
+              .contact-info {
+                flex-direction: row !important;
+                justify-content: center;
+                align-items: center;
+                gap: 1.2rem;
+              }
+              .contact-label {
+                display: none !important;
+              }
+              .contact-item {
+                padding: 0.7rem !important;
+                min-width: unset;
+                min-height: unset;
+                background: none !important;
+                box-shadow: none !important;
+              }
+              .social-icon {
+                width: 36px !important;
+                height: 36px !important;
+              }
+            }
+          </style>
+        </div>
+        <!-- Floating WhatsApp Button -->
+        <a
+          href="https://wa.me/919090702026?text=I%20would%20like%20to%20know%20more%20about%20your%20tour%20packages"
+          class="floating-whatsapp"
+          target="_blank"
+          aria-label="Chat with us on WhatsApp"
+        >
+          <div class="social-icon whatsapp"></div>
+        </a>
+        <style>
+          .floating-whatsapp {
+            position: fixed;
+            right: 30px;
+            bottom: 30px;
+            z-index: 9999;
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            border-radius: 50%;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: box-shadow 0.2s;
+          }
+          .floating-whatsapp:hover {
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.25);
+            background: linear-gradient(45deg, #128c7e, #25d366);
+          }
+          .floating-whatsapp .social-icon.whatsapp {
+            width: 36px;
+            height: 36px;
+            background-size: 36px 36px;
+          }
+          @media (max-width: 600px) {
+            .floating-whatsapp {
+              right: 16px;
+              bottom: 16px;
+              width: 48px;
+              height: 48px;
+            }
+            .floating-whatsapp .social-icon.whatsapp {
+              width: 28px;
+              height: 28px;
+              background-size: 28px 28px;
+            }
+          }
+        </style>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 Chronicles of Kerala. All rights reserved. | Crafting
+            memories, one journey at a time.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
